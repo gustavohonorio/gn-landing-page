@@ -1,0 +1,30 @@
+.float {
+  position: fixed;
+  right: 1rem;
+  bottom: calc(1rem + env(safe-area-inset-bottom));
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: var(--color-brand);
+  color: var(--color-on-brand);
+  box-shadow: 0 8px 24px rgba(47, 32, 24, 0.3);
+  transition: background-color 0.2s ease;
+}
+
+.float:hover {
+  background: var(--color-brand-dark);
+}
+
+.float svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+@media (min-width: 48rem) {
+  .float {
+    display: none;
+  }
+}
