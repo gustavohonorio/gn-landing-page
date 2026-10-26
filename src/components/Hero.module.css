@@ -1,0 +1,54 @@
+.hero {
+  padding-block: 2.5rem var(--section-space);
+}
+
+.inner {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.title {
+  font-size: clamp(2.75rem, 10vw, 4.25rem);
+  text-wrap: balance;
+  font-weight: 500;
+}
+
+.title em {
+  display: block;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-brand);
+}
+
+.lead {
+  max-width: 34rem;
+  margin-top: 1.25rem;
+  font-size: 1.125rem;
+  color: var(--color-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.media img {
+  width: 100%;
+  border-radius: var(--radius);
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+@media (min-width: 56rem) {
+  .hero {
+    padding-top: 4rem;
+  }
+
+  .inner {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+  }
+}
