@@ -9,8 +9,8 @@
 
 export const site = {
   name: "GN",
-  /** PENDENTE: domínio definitivo (usado em SEO, sitemap e compartilhamento). */
-  url: "https://www.gn-exemplo.com.br",
+  /** URL pública (SEO, sitemap e compartilhamento). Definida em .env.production. */
+  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000").replace(/\/$/, ""),
   title: "GN — Tônico Capilar e Microagulhamento Capilar",
   description:
     "GN: Tônico Capilar e Microagulhamento Capilar em São Carlos - SP. Cuidado que vai além da estética, com atenção individualizada. Fale conosco pelo WhatsApp.",
