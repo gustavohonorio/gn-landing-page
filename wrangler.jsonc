@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Site 100% estático (Next.js `output: "export"` gera a pasta out/).
+  // Publicado como Worker só de assets: sem código de servidor.
+  "name": "gn-landing-page",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./out",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+
+  // DOMÍNIO PRÓPRIO (quando houver): depois de adicionar o domínio na conta
+  // Cloudflare, descomente o bloco abaixo (e atualize .env.production).
+  // ,"routes": [
+  //   { "pattern": "gn.com.br", "custom_domain": true },
+  //   { "pattern": "www.gn.com.br", "custom_domain": true }
+  // ]
+}
