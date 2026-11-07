@@ -18,8 +18,6 @@ npm run build    # gera o site estático na pasta out/
 
 Todos os textos, preços e contatos ficam em **`src/content/site.ts`**. Itens marcados como `PENDENTE` precisam ser confirmados antes da publicação:
 
-- `contact.whatsapp`: número com DDI e DDD, só dígitos (ex.: `5511999999999`)
-- `contact.instagram`: usuário sem `@` (vazio = links ocultos)
 - `contact.location`: cidade/endereço (vazio = oculto)
 - `product.volume` e `product.howToUse`
 - Perguntas frequentes (`faq`)

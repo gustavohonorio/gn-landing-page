@@ -20,8 +20,8 @@ export const site = {
   contact: {
     /** Número com DDI + DDD, só dígitos. Ex.: 5511999999999 */
     whatsapp: "5516997514107",
-    /** PENDENTE: usuário do Instagram sem "@". Deixe vazio para ocultar os links. */
-    instagram: "",
+    /** Usuário do Instagram sem "@". Deixe vazio para ocultar os links. */
+    instagram: "gn_regeneration_hair",
     /** Cidade/endereço de atendimento. Deixe vazio para ocultar. */
     location: "São Carlos - SP",
   },
