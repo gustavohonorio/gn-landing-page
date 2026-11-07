@@ -36,16 +36,19 @@ public/images/   imagens otimizadas usadas no site
 
 As imagens originais ficam em `assets-originais/` (não são publicadas). O site usa as versões otimizadas em `public/images/`.
 
-## Publicação (Cloudflare Workers)
+## Publicação (Cloudflare Pages)
 
-O site é publicado como um Worker só de arquivos estáticos (configuração em `wrangler.jsonc`). Com o repositório conectado ao Cloudflare (Workers Builds), **todo push na branch `main` publica o site automaticamente**.
+O site é exportado como HTML estático (`output: "export"` em `next.config.ts`) e publicado no **Cloudflare Pages**. Não há servidor, OpenNext ou Wrangler. Com o repositório conectado, todo push na branch `main` publica o site automaticamente.
 
-Configuração no painel (Workers & Pages → Create → Import a repository):
+Configuração do projeto no Pages:
 
+- Framework preset: **None**
 - Build command: `npm run build`
-- Deploy command: `npx wrangler deploy`
+- Build output directory: `out`
+- Root directory: (vazio)
+- Versão do Node: definida em `.node-version` (22)
 
-Publicação manual (opcional): `npx wrangler login` e depois `npm run deploy`. Para testar localmente com o servidor do Cloudflare: `npm run preview`.
+Cabeçalhos de cache e segurança ficam em `public/_headers`. Para testar o site exportado localmente: `npm run build` e depois `npm start`.
 
 ### URL do site e domínio próprio
 
@@ -53,7 +56,6 @@ A URL pública usada em SEO (canonical, Open Graph, sitemap, robots) fica em **`
 
 Quando houver um domínio:
 
-1. Adicione o domínio na conta Cloudflare e aponte os nameservers no registro.br (ou onde foi comprado).
-2. Em `wrangler.jsonc`, descomente o bloco `routes` e coloque o domínio.
-3. Em `.env.production`, troque `NEXT_PUBLIC_SITE_URL` pelo domínio (ex.: `https://www.gn.com.br`).
-4. Faça commit e push na `main`.
+1. No projeto do Pages, abra **Custom domains** e adicione o domínio (ex.: `www.gn.com.br`). O Cloudflare orienta a configuração de DNS e emite o certificado HTTPS.
+2. Em `.env.production`, troque `NEXT_PUBLIC_SITE_URL` pelo domínio.
+3. Faça commit e push na `main`.
