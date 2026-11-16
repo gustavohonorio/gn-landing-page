@@ -57,7 +57,6 @@ export const site = {
   product: {
     name: "Tônico Capilar GN",
     subtitle: "Tecnologia cosmética e cuidado em cada gota.",
-    /** PENDENTE: confirmar volume (foto mostra 50 ml, catálogo mostra 30 ml). */
     volume: "30 ml",
     price: 119.9,
     description:
